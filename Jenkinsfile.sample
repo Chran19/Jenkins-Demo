@@ -1,0 +1,29 @@
+pipeline {
+    agent any 
+    
+    // 'agent any' means this pipeline can run on any available node (master or slave)
+
+    stages {
+        stage('Build') {
+            steps {
+                // This echo command prints text to the console output
+                echo 'Building the application...jana ' 
+                // In a real project, you might run 'mvn clean package' or 'npm install' here
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo 'Testing the application...'
+                // Real command example: 'mvn test' or 'npm test'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+                // Real command example: 'kubectl apply -f deployment.yaml'
+            }
+        }
+    }
+}
